@@ -1,3 +1,3 @@
-self.addEventListener('install',function(e){
-  fetch(e);
+self.addEventListener('fetch',function(e){
+  fetch(e.request);
 });
