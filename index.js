@@ -1,3 +1,3 @@
 if('serviceWorker' in navigator){
-  navigator.serviceWorker.register('as/sw.js');
+  navigator.serviceWorker.register('sw.js');
 };
