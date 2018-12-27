@@ -1,6 +1,6 @@
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="https://raw.githubusercontent.com/mdn/pwa-examples/master/a2hs/icon/fox-icon.png">
-<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
 <script src="index.js" defer></script>
 <style>
 img{display:inline-block;}
@@ -32,21 +32,5 @@ fetch('https://script.google.com/macros/s/AKfycbxlLOapegf59Q6p1gAlBkkhcIHiVKyJWP
  button.innerHTML='References';
  center.appendChild(button);
   })
-  .catch(e=>console.log(e.message));
-  
-(function () {
-    var location = window.document.location;
-
-    var preventNavigation = function () {
-        var originalHashValue = location.hash;
-
-        window.setTimeout(function () {
-            location.hash = 'preventNavigation' + ~~ (9999 * Math.random());
-            location.hash = originalHashValue;
-        }, 0);
-    };
-
-    window.addEventListener('beforeunload', preventNavigation, false);
-    window.addEventListener('unload', preventNavigation, false);
-})();
+.catch(e=>console.log(e.message));
 </script>
