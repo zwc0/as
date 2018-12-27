@@ -2,11 +2,13 @@
   "background_color":"blue",
   "description":"Animal Sounds",
   "display":"standalone",
-  "icons":{
-    "src":"192.png",
-    "sizes":"192x192",
-    "type":"image/png"
-  },
+  "icons":[
+    {
+      "src":"https://raw.githubusercontent.com/mdn/pwa-examples/master/a2hs/icon/fox-icon.png",
+      "sizes":"192x192",
+      "type":"image/png"
+    }
+  ],
   "name":"Animal Sounds",
   "short_name":"Animal Sounds",
   "start_url":"/as/index.html"
