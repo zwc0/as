@@ -2,4 +2,35 @@
 <link rel="icon" href="https://raw.githubusercontent.com/mdn/pwa-examples/master/a2hs/icon/fox-icon.png">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script src="index.js" defer></script>
-test2
+<style>
+img{display:inline-block;}
+@media only screen and (max-width: 600px) {
+  img{width:49%;height:auto;overflow: hidden}
+}
+@media only screen and (min-width: 600px) {
+  img{width:33%;height:auto;overflow: hidden}
+}
+</style>
+<center></center>
+<script>
+fetch('https://script.google.com/macros/s/AKfycbxlLOapegf59Q6p1gAlBkkhcIHiVKyJWPyH9Lo89TdZFCS3CrFT/exec',{
+  method:'POST'
+})
+.then(e=>e.text())
+.then(e=>{
+  var d=JSON.parse(e);
+  let ce=e=>document.createElement(e),
+ center=document.getElementsByTagName('center')[0];
+ for(let i of d){
+  let img=ce('img');
+  img.src=i[0];
+  img.onclick=function(arg){return function(){var a=new Audio(arg);a.play()}}(i[1]);
+  center.appendChild(img);
+ }
+ let button=ce('button');
+ button.onclick=()=>window.open('https://script.google.com/macros/s/AKfycbxlLOapegf59Q6p1gAlBkkhcIHiVKyJWPyH9Lo89TdZFCS3CrFT/exec?p=ref','_top');
+ button.innerHTML='References';
+ center.appendChild(button);
+  })
+  .catch(e=>console.log(e.message));
+</script>
