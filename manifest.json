@@ -3,7 +3,7 @@
   "description":"Animal Sounds",
   "display":"standalone",
   "icons":{
-    "src":"https://raw.githubusercontent.com/mdn/pwa-examples/master/a2hs/icon/fox-icon.png",
+    "src":"192.png",
     "sizes":"192x192",
     "type":"image/png"
   },
