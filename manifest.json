@@ -1,0 +1,13 @@
+{
+  "background_color":"blue",
+  "description":"Animal Sounds",
+  "display":"standalone",
+  "icons":{
+    "src":"ico/192.png",
+    "sizes":"192x192",
+    "type":"image/png"
+  },
+  "name":"Animal Sounds",
+  "short_name":"Animal Sounds",
+  "start_url":"/as/index.html"
+}
