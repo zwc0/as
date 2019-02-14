@@ -12,8 +12,8 @@ img{width:95%;margin:auto}
 <table id="ref" style="display:none"></table>
 <center><button id="tog">References</button></center>
 <script type="module">
-import * as z from "/z.js";
-fetch('/s.json')
+import * as z from "./z.js";
+fetch('./s.json')
 .then(e=>e.json())
 .then(e=>{
   z.z('#a')[0].innerHTML=e.map(i=>`<img src="${i[1]}" onclick="let a=new Audio('${i[2]}');a.play()">`).join('');
