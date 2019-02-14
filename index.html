@@ -3,35 +3,28 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
 <script src="index.js" defer></script>
 <style>
-body{overscroll-behavior:contain}
-img{display:inline-block;}
-@media only screen and (max-width: 600px) {
-  img{width:49%;height:auto;overflow: hidden}
-}
-@media only screen and (min-width: 600px) {
-  img{width:33%;height:auto;overflow: hidden}
-}
+:root{--c:3}
+@media screen and (max-width: 600px) {:root{--c:2}}
+#a{display:grid;grid-template-columns:repeat(var(--c),1fr)}
+img{width:95%;margin:auto}
 </style>
-<center></center>
-<script>
-fetch('https://script.google.com/macros/s/AKfycbxlLOapegf59Q6p1gAlBkkhcIHiVKyJWPyH9Lo89TdZFCS3CrFT/exec',{
-  method:'POST'
-})
-.then(e=>e.text())
+<div id="a"></div>
+<table id="ref" style="display:none"></table>
+<center><button id="tog">References</button></center>
+<script type="module">
+import * as z from "/z.js";
+fetch('/s.json')
+.then(e=>e.json())
 .then(e=>{
-  var d=JSON.parse(e);
-  let ce=e=>document.createElement(e),
- center=document.getElementsByTagName('center')[0];
- for(let i of d){
-  let img=ce('img');
-  img.src=i[0];
-  img.onclick=function(arg){return function(){var a=new Audio(arg);a.play()}}(i[1]);
-  center.appendChild(img);
- }
- let button=ce('button');
- button.onclick=()=>window.open('https://script.google.com/macros/s/AKfycbxlLOapegf59Q6p1gAlBkkhcIHiVKyJWPyH9Lo89TdZFCS3CrFT/exec?p=ref','_top');
- button.innerHTML='References';
- center.appendChild(button);
-  })
-.catch(e=>console.log(e.message));
+  z.z('#a')[0].innerHTML=e.map(i=>`<img src="${i[1]}" onclick="let a=new Audio('${i[2]}');a.play()">`).join('');
+  z.z('#tog')[0].onclick=()=>{
+    let a=z.z('#a')[0],
+    ref=z.z('#ref')[0],
+    tog=z.z('#tog')[0];
+    a.style.display=a.style.display==''?'none':'';
+    ref.style.display=a.style.display==''?'none':'';
+    tog.textContent=tog.textContent=='Back'?'References':'Back';
+  };
+  z.z('#ref')[0].innerHTML=e.map(e=>`<tr>${e.map(e=>`<td>${e}</td>`).join('')}</tr>`).join('');
+}).catch(e=>console.log(e.message));
 </script>
