@@ -1,2 +1,0 @@
-# as
-Animal Sounds PWA
