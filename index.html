@@ -1,37 +1,14 @@
-<title>Animal Sounds</title>
-<link rel="manifest" href="manifest.json">
-<link rel="icon" href="https://raw.githubusercontent.com/mdn/pwa-examples/master/a2hs/icon/fox-icon.png">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
-<script src="index.js" type="module"></script>
-<style>
-:root{--c:3}
-@media screen and (max-width: 600px) {:root{--c:2}}
-#tabs {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background-color: rgb(0, 158, 211);
-  text-align: center;
-}
-#tabs a {
-  color: white;
-  text-decoration: none;
-  padding: .5rem;
-}
-#tabs a.active {
-  background-color: blue;
-}
-#tabs a:hover {
-  background-color: grey;
-}
-#main{
-  display:grid;
-  grid-template-columns:repeat(var(--c),1fr)
-}
-img{width:95%;margin:auto}
-</style>
-<div id="tabs">
-  <a href="#" class="active">Home</a>
-  <a href="#/ref">References</a>
-</div>
-<div id="main" data-view=""></div>
-<table id="ref" style="display:none" data-view="ref"></table>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Animal Sounds</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="https://raw.githubusercontent.com/mdn/pwa-examples/master/a2hs/icon/fox-icon.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script src="dist/app.js" defer></script>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>

@@ -1,4 +1,4 @@
-[
+const assets = [
   ["dog",
     "http://www.drawing-factory.com/wp-content/uploads/2014/12/how-to-draw-dog11.jpg",
     "http://audiosoundclips.com/wp-content/uploads/2011/12/Dogbark.mp3"
@@ -24,3 +24,4 @@
     "http://soundbible.com/grab.php?id=1737&type=mp3"
   ]
 ]
+export default assets;
